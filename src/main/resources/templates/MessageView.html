@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Messagerie</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+    </head>
+    <body>
+        <h1 align='Center'> Envoyez vos messages <i>gratuitement</i> </h1>
+        <div align='Center'>
+        
+        <p>1.Saisissez le numéro de votre correspondant dans le champ numéro <br></br>2.Composez votre message (Max 100 caractères)   <br></br>3.Cliquez sur le bouton envoyer</p>
+        </div>
+               
+        <form action="#" th:action="@{/}" th:object="${Sms}" method="post">
+                          <table align='center'>
+                              <tr><td>Numero : </td></tr><tr><td><input type="tel" style="width: 265px;" th:field="*{num}"   required="required" placeholder="Numéro"/>
+                                    </td>
+                           
+                           </tr>
+                           
+                              <tr><td>Message : </td></tr><tr><td><textarea cols="35" rows="5" th:field="*{msg}"  maxlength="100" required="required" placeholder="Saisissez votre message ici"></textarea>
+                                      </td>
+                            
+                              </tr>
+                              
+                              <tr><td></td><td><button type="submit">Envoyer</button></td></tr>
+                        
+                          </table>
+                    </form>
+    </body>
+</html>
